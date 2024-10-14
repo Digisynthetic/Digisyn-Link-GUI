@@ -9,7 +9,7 @@ __The [Digisyn Link®][digisyn-link] is a comprehensive platform that covers all
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
-Any audio device equipped with __[DL-04 series network module][dl-04]__ or __[DL-08 series network module][dl-08]__ can use __[DigisynLink3 GUI control software][gui]__ to perform audio routing, DSP processing and network monitoring on __[Digisyn Link®][digisyn-link]__ embedded devices or __[Digisyn AES67 VSC(AES67 Virtual Sound Card)][vsc]__.
+Any audio device equipped with __[DL-04 series network module][dl-04]__ or __[DL-08 series network module][dl-08]__ can use __[DigisynLink3 GUI control software][gui]__ to perform audio routing, DSP processing and network monitoring on __[Digisyn Link®][digisyn-link]__ embedded devices or __[AES67 VSC(AES67 Virtual Sound Card)][vsc]__.
 
 The __[Digisyn Link®][digisyn-link]__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
 
@@ -174,6 +174,7 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 2. The area represents the channel level indication. Green indicates there is a level, and gray indicates there is no level.
 3. The area represents the DSP function of the channel. Bright color indicates that the function is enabled (non-pass-through), and gray indicates that the function is not enabled (pass-through). Double-clicking the corresponding function box will pop up the detailed parameter setting page. Multiple detailed parameter setting pages can be opened at the same time.
 The DSP functions of different channels may be different.
+
 ![8.2-4](./images/13-7.jpg)
 
 4. The area represents the mute, reverse, and gain functions. Mute and reverse can be toggled by clicking. Double-click gain to open the adjustment window.
