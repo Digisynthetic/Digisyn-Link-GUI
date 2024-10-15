@@ -1,17 +1,17 @@
 
 # DigisynLink3 GUI Instruction manual
 
-![digisyn link logo](./images/digisyn-link-logo.png)
+![digisyn link logo](./images/DIGISYNLINK.jpg)
 
-__The [Digisyn Link®][digisyn-link] is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
+__The [Digisyn Link][digisyn-link] is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
 
 ![digisyn link logo](./images/AES67-module.jpg)
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
-Any audio device equipped with __[DL-04 series network module][dl-04]__ or __[DL-08 series network module][dl-08]__ can use __[DigisynLink3 GUI control software][gui]__ to perform audio routing, DSP processing and network monitoring on __[Digisyn Link®][digisyn-link]__ embedded devices or __[AES67 VSC(AES67 Virtual Sound Card)][vsc]__.
+Any audio device equipped with __[DL-04 series network module][dl-04]__ or __[DL-08 series network module][dl-08]__ can use __[Digisyn Link3 GUI Controller][gui]__ to perform audio routing, DSP processing and network monitoring on __[Digisyn Link][digisyn-link]__ embedded devices or __[AES67 VSC(AES67 Virtual Sound Card)][vsc]__.
 
-The __[Digisyn Link®][digisyn-link]__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
+The __[Digisyn Link][digisyn-link]__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
 
 ## 1. Software installation
 +  Double-click the software installation package to install. You can choose the installation language. Simplified Chinese/English is supported. After selection, click <kbd>OK</kbd>.
@@ -25,13 +25,13 @@ The __[Digisyn Link®][digisyn-link]__ system is optimized for large, demanding 
 +  Click <kbd>Finish</kbd> to enter the software.
 
 
-## 2.Language switching
+## 2. Language switching
 
 At the lower left corner of the software, click the language button to switch languages. Simplified Chinese/English is supported：
 
 ![2-1](./images/12-1.jpg)
 
-## 3.Discover device
+## 3. Discover device
 
 The software discovers and controls devices through the local area network. When opening the software, it is necessary to specify which network card of the computer is used (___different network cards may correspond to different local area networks___). If there is only one network card, the software will select it by default. If there are multiple network cards, it needs to be manually specified：
 
@@ -51,7 +51,7 @@ You can also refresh the device list by <kbd>Menu - Refresh</kbd>：
 
 ![3-4](./images/12-5.jpg)
 
-## 4.View device information and parameters
+## 4. View device information and parameters
 
 On the left side of the software, click <kbd>Device Information</kbd> column，You can view the basic information of the device：
 
@@ -278,15 +278,24 @@ For the delay function, all channels share a delay upper limit.
 Right-click on the channel ID to copy the function block of the entire channel and paste it to other channels.
 ### 11.2 Modify the number of channels of the module
 ![11.2](./images/14-9-status.jpg)
-For device types that support modifying channels, on the <kbd>Device Information - Others</kbd>page, press and hold Ctrl+8 at the same time and enter the control code 6688. The channel and parameter configuration function page will be displayed.
-2. The area is the function operation button. "Refresh Configuration" can refresh the current configuration data of the device. "Modify Configuration" can submit the modified content to the device. After submission, the device needs to be restarted for the changes to take effect.
+
+For device types that support modifying channels, on the <kbd>Device Information - Others</kbd>page:
++  press and hold __"Ctrl+8"__ at the same time and enter the control code __'6688'__. The channel and parameter configuration function page will be displayed.
++ The area is the function operation button. <kbd>Refresh Configuration</kbd> can refresh the current configuration data of the device. 
+
++ <kbd>Modify Configuration</kbd> can submit the modified content to the device. After submission, the device needs to be restarted for the changes to take effect.
 If the device supports the DSP function, after modifying the number of input channels and output channels, the default DSP configuration needs to be modified (refer to 11.3). If the device does not support the DSP function, there is no need to configure the DSP.
 ### 11.3 Modifying the default DSP configuration
 
 For devices with DSP functions, after modifying the number of channels, the DSP configuration file needs to be updated. Otherwise, the number of channels does not match the original configuration file, and the DSP function cannot be loaded normally.
-After modifying the number of channels in 11.2, restart the device to make the number of channels take effect. Then enter "Advanced Configuration". As shown in the figure, after confirming the number of input and output channels and the sampling rate, click "Set as Default" (after restarting due to modifying the channels, do not click the "Audio Processing" page, otherwise the advanced configuration modification will fail). This can reset the DSP configuration. After resetting the DSP configuration, the machine needs to be restarted for the changes to take effect, thus completing the modification.
 
 ![11.3](./images/15-advanceconfig.png)
+
+After modifying the number of channels in 11.2, restart the device to make the number of channels take effect. Then enter <kbd>Advanced Configuration</kbd>. As shown in the figure.
+
+After confirming the number of input and output channels and the sampling rate, click <kbd>Set as Default</kbd> (after restarting due to modifying the channels, do not click the <kbd>Audio Processing</kbd> page, otherwise the advanced configuration modification will fail). This can reset the DSP configuration. After resetting the DSP configuration, the machine needs to be restarted for the changes to take effect, thus completing the modification.
+
+
 
 ## 12. Troubleshooting
 ### 12.1 When the software starts, it prompts that the xxx.dll library is missing.
@@ -308,9 +317,15 @@ If the firewall is enabled, the following programs need to be set to allow netwo
 + ___gohttpserver.exe___
 
 
+## About this repository
+
+1.  This repository is for storing the __Digisyn Link3 GUI__ software package and the user manual. To download Digisyn Link3 GUI, please click __"Releases"__ on the right.
+2.  For more information about the Digisyn Link, please visit **[www.digisynthetic.com][digisynthetic]**.
+
 [digisyn-link]: https://www.digisynthetic.com/digisynlink
 
 [dl-04]: https://www.digisynthetic.com/
 [dl-08]: https://www.digisynthetic.com/
+[digisynthetic]: https://www.digisynthetic.com/
 [gui]: https://github.com/Digisynthetic/Digisyn-Link
 [vsc]: https://github.com/Digisynthetic/Digisyn-Link-VSC
