@@ -9,7 +9,9 @@ __The [Digisyn Link][digisyn-link] is a comprehensive platform that covers all D
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
-Any audio device equipped with __[DL-04 series network module][dl-04]__ or __[DL-08 series network module][dl-08]__ can use __[Digisyn Link3 GUI Controller][gui]__ to perform audio routing, DSP processing and network monitoring on __[Digisyn Link][digisyn-link]__ embedded devices or __[AES67 VSC(AES67 Virtual Sound Card)][vsc]__.
+Any audio device can equipped with __[DL-04 series network modules][dl-04]__ or __[DL-08 series network modules][dl-08]__.
+
+ __[Digisyn Link3 GUI Controller][gui]__  perform audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)][vsc]__.
 
 The __[Digisyn Link][digisyn-link]__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
 
