@@ -1,19 +1,19 @@
 
-# DigisynLink3 GUI Instruction manual
+# DIGISYN LINK3 GUI Instruction manual
 
-![digisyn link logo](./images/DIGISYNLINK.jpg)
+![DIGISYN LINK logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/DIGISYNLINK.jpg)
 
-__The [Digisyn Link][digisyn-link] is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
+__The [DIGISYN LINK](https://www.digisynthetic.com/digisynlink/) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
 
-![digisyn link logo](./images/AES67-module.jpg)
+![digisyn link logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/AES67-module.jpg)
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
-Any audio device can equipped with __[DL-04 series network modules][dl-04]__ or __[DL-08 series network modules][dl-08]__.
+Any audio device can equipped with __[DL-04 series network modules](https://www.digisynthetic.com/dl-modules/)__ or __[DL-08 series network modules](https://www.digisynthetic.com/dl-modules/)__.
 
- __[Digisyn Link3 GUI Controller][gui]__  performs audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)][vsc]__.
+ __DIGISYN LINK3 GUI Controller__  performs audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)](https://github.com/Digisynthetic/Digisyn-Link-VSC)__.
 
-The __[Digisyn Link][digisyn-link]__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
+The __DIGISYN LINK__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
 
 ## 1. Software installation
 +  Double-click the software installation package to install. You can choose the installation language. Simplified Chinese/English is supported. After selection, click <kbd>OK</kbd>.
@@ -31,33 +31,33 @@ The __[Digisyn Link][digisyn-link]__ system is optimized for large, demanding au
 
 At the lower left corner of the software, click the language button to switch languages. Simplified Chinese/English is supported：
 
-![2-1](./images/12-1.jpg)
+![2-1](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-1.jpg)
 
 ## 3. Discover device
 
 The software discovers and controls devices through the local area network. When opening the software, it is necessary to specify which network card of the computer is used (___different network cards may correspond to different local area networks___). If there is only one network card, the software will select it by default. If there are multiple network cards, it needs to be manually specified：
 
-![3-1](./images/12-2.jpg)
+![3-1](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-2.jpg)
 
 
 If the network cable of the computer is plugged or unplugged or the network is switched, the corresponding network card needs to be reselected. Click the menu and select it in the drop-down window<kbd>Set network card</kbd>：
 
-![3-2](./images/12-3.jpg)
+![3-2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-3.jpg)
 
 
 After selecting the network card, the software will automatically discover the devices in the corresponding local area network. Wait for about ___5 seconds___ to discover the devices：
 
-![3-3](./images/12-4.jpg)
+![3-3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-4.jpg)
 
 You can also refresh the device list by <kbd>Menu - Refresh</kbd>：
 
-![3-4](./images/12-5.jpg)
+![3-4](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-5.jpg)
 
 ## 4. View device information and parameters
 
 On the left side of the software, click <kbd>Device Information</kbd> column，You can view the basic information of the device：
 
-![4-1](./images/12-6.jpg)
+![4-1](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-6.jpg)
 
 + <kbd>Device name</kbd>:_The name displayed by the device on the interface. You can be modified in the<kbd>Device configuration</kbd>.Double-click the name of the device, click Device Configuration, find the device name in the device information column, and then click to modify it：
 
@@ -69,13 +69,13 @@ On the left side of the software, click <kbd>Device Information</kbd> column，Y
 
 + <kbd>PPM</kbd>:Description parameter for clock alignment of master and slave devices. Generally, it is within ±30.
 
-+ <kbd>Master/Slave</kbd>:Whether it is a master device or a slave device. There is only one master device in a local area network. If there are other non-DigisynLink devices using PTP clocks, they will also participate in the selection of master and slave devices together. That is, if there is a non-DigisynLink device in the same local area network and its clock priority is higher, all DigisynLink devices on the software may act as slaves.
++ <kbd>Master/Slave</kbd>:Whether it is a master device or a slave device. There is only one master device in a local area network. If there are other non-DIGISYN LINK devices using PTP clocks, they will also participate in the selection of master and slave devices together. That is, if there is a non-DIGISYN LINK device in the same local area network and its clock priority is higher, all DIGISYN LINK devices on the software may act as slaves.
 
-+ <kbd>Clock priority</kbd>: A parameter used to select master and slave devices. The range is 0-255. The smaller the value, the higher the priority. The default is 128. The system will automatically select the device with the highest priority (smallest value) in the network as the master device. You can manually specify a certain device to be the master (increase the priority). ___Virtual sound cards ([VSC][vsc]) and some special devices cannot be masters. The clock priority cannot be modified and is displayed as NA.___
++ <kbd>Clock priority</kbd>: A parameter used to select master and slave devices. The range is 0-255. The smaller the value, the higher the priority. The default is 128. The system will automatically select the device with the highest priority (smallest value) in the network as the master device. You can manually specify a certain device to be the master (increase the priority). ___Virtual sound cards (VSC) and some special devices cannot be masters. The clock priority cannot be modified and is displayed as NA.___
 
 + <kbd>Version</kbd>: Displays the firmware version number of the device. The version of the virtual sound card is viewed on the virtual sound card software. This page shows NA.
 
-![4-3](./images/12-7.jpg)
+![4-3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-7.jpg)
 
 On the left side of the software, click the <kbd>device parameter</kbd>column，You can view the parameter information of the device：
 + <kbd>Device name</kbd>：Same as above. Device type: same as above. Device ID: same as above.
@@ -93,32 +93,32 @@ On the left side of the software, click the <kbd>device parameter</kbd>column，
 ## 5. Clock priority setting
 It can be modified in the "Device Information" column. Click <kbd>Device Information</kbd>to enter. Select the required device in the clock priority column for modification：
 
-![5](./images/12-8.jpg)
+![5](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-8.jpg)
 
 ## 6. PTP DSCP Priority setting
 It can be modified on the <kbd>Device Details - Others</kbd> page. After modification, click <kbd>Restart</kbd> to complete：
 
-![6](./images/12-9.jpg)
+![6](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/12-9.jpg)
 
 This parameter, in switches that support QoS, will affect the priority of the audio transmission stream. The range is 0 to 63, and the default is 46. The larger the value, the higher the priority and the higher the transmission stability.
 
 ## 7. IP Address setting
 It can be modified on the <kbd>Device Details - Device Configuration</kbd> page of device Config. Two methods are supported: automatic acquisition and manual setting：
 
-![7](./images/13.jpg)
+![7](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13.jpg)
 
 + If it is automatic acquisition, make sure that the IP address of the computer is also obtained automatically, or manually set the same network segment.
 + If it is manual setting, make sure that the IP of the computer is also manually set and set in the same network segment.
 If the IP addresses of the computer or device are not in the same network segment, it will cause the device to be unable to be viewed/controlled normally (except when the switch is set to support cross-network segments).
 ## 8.Device details
 
-![8](./images/13-1.jpg)
+![8](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-1.jpg)
 
 On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd>Device Parameters</kbd> ，double-clicking the device name or device row will pop up the<kbd>Device Details</kbd> page：
 
 ### 8.1 Device configuration
 
-![8.1](./images/13-2.png)
+![8.1](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-2.png)
 
 + <kbd>Device name</kbd>：The name of the device can be modified. It cannot exceed 32 characters. By default, it is the same as the device ID.
 
@@ -136,11 +136,11 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 
 + <kbd>Reset IP address</kbd>：If the IP address is in manual setting mode and incorrect parameters are set, resulting in the software being unable to view/obtain device information, the IP can be reset to change the device to automatic acquisition mode. 
 
-![8.1-2](./images/13-3.jpg)
+![8.1-2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-3.jpg)
 
 ### 8.2 transport stream
 
-![8.2](./images/13-4.jpg)
+![8.2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-4.jpg)
 
 <kbd>Unicast stream</kbd>：This page displays the unicast receiving, sending routing, stream records and status of the device. (This data is updated every time the device details are opened.)
 
@@ -156,7 +156,7 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 
 + mcastArrTx(dstIp, name)：The array of multicast sending streams that have been created. "dstIp" represents the multicast stream address. "name" represents the multicast stream name.
 
-![8.2-2](./images/13-5.png)
+![8.2-2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-5.png)
 
 <kbd>multicast stream</kbd>：This page can create, view, and delete multicast streams.
 
@@ -168,7 +168,7 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 
 <kbd>delete</kbd>：You can delete the created multicast stream.
 
-![8.2-3](./images/13-6.jpg)
+![8.2-3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-6.jpg)
 
 <kbd>flow chart</kbd>：Here you can view the functions of DSP input and output channels.
 
@@ -177,7 +177,7 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 3. The area represents the DSP function of the channel. Bright color indicates that the function is enabled (non-pass-through), and gray indicates that the function is not enabled (pass-through). Double-clicking the corresponding function box will pop up the detailed parameter setting page. Multiple detailed parameter setting pages can be opened at the same time.
 The DSP functions of different channels may be different.
 
-![8.2-4](./images/13-7.jpg)
+![8.2-4](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-7.jpg)
 
 4. The area represents the mute, reverse, and gain functions. Mute and reverse can be toggled by clicking. Double-click gain to open the adjustment window.
 5. The area represents the current CPU usage. Enabling DSP functions (non-pass-through) will increase CPU usage, and disabling DSP functions (pass-through) will reduce CPU usage. CPU usage should not exceed 85%.
@@ -185,25 +185,25 @@ Right-click on the channel number to pop up the function menu. You can copy and 
 Right-click on the DSP function block to pop up the function menu. You can copy and paste function parameters.
 ### 8.3 Channel volume and grouping：
 
-![8.2-5](./images/13-8.jpg)
+![8.2-5](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-8.jpg)
 
 1. The area represents input, output channels, and group switching.
 2. The area represents the channel name. The gray part cannot be modified. It indicates whether it is an analog or network channel and the channel subscript. The black name can be modified by yourself. The length should not exceed 32 characters.
 3. The area refreshes the level of the channel in real time.
 4. The area represents channel gain, mute, and reverse.
 
-![8.2-6](./images/13-9.jpg)
+![8.2-6](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-9.jpg)
 
 1. The area represents the group name.
 2. The area indicates which channels are under the corresponding group. It is divided into two parts. The upper part is the input/output channel and subscript, and the lower part is the channel name.
 
 <kbd>Matrix control</kbd>：
 
-![8.2-7](./images/14.jpg)
+![8.2-7](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14.jpg)
 
 <kbd>Program management</kbd>：
 
-![8.2-8](./images/14-1.jpg)
+![8.2-8](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-1.jpg)
 
 1. The area represents the system's default program. This program cannot be modified, deleted, saved, etc.
 2. The area represents the programs saved by yourself. 1-20 are customizations, supporting 20 custom programs.
@@ -216,7 +216,7 @@ Right-click on the DSP function block to pop up the function menu. You can copy 
 Import from PC: Select the corresponding serial number in the list to import a computer file into the machine.
 
 ### 8.4 <kbd>Channel volume</kbd>
-![8.4](./images/14-2-InputChannel.jpg)
+![8.4](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-2-InputChannel.jpg)
 
 1. The area represents the switching between input and output channels.
 2. The area represents the channel name. The gray part cannot be modified and distinguishes between analog input, network input and channel number. The black part can be modified and the length should not exceed 32 characters.
@@ -224,36 +224,36 @@ Import from PC: Select the corresponding serial number in the list to import a c
 4. The area represents channel gain and mute. Only analog channels have this function, while network channels do not.
 5. The area has functions for some specific models, but general models do not.
 ### 8.5 <kbd>Delay statistics</kbd>
-![8.5](./images/14-3-latency.jpg)
+![8.5](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-3-latency.jpg)
 
 1. The area represents the data stream. If data is received from multiple devices or the number of receiving channels exceeds the number of channels that a stream can accommodate, there will be multiple data streams at this time. Switching can view the statistical data of different streams.
 2. The area represents statistical data. Before the machine is powered on and synchronized, the data will appear as a red bar. This is normal. At the beginning of power-on, the clock is not synchronized. After the clock is synchronized, the red color will no longer increase.
 3. The area can clear the data and perform statistics again. Generally, if an occasional individual red bar appears, it is due to fluctuations in the network environment and does not affect sound transmission. If there is a continuous increase in red data at intervals, it indicates abnormal network or device transmission, and troubleshooting is required.
 ### 8.6 <kbd>Clock log</kbd>
 
-![8.6](./images/14-4-ClockLog.png)
+![8.6](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-4-ClockLog.png)
 
 When the clock log page is opened, it will monitor the log information of the device. This information is used for device debugging and can be used to check whether the clock synchronization is normal.
 ### 8.7 <kbd>Others</kbd>
-![8.7](./images/14-5-status.jpg)
+![8.7](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-5-status.jpg)
 This page displays the version information, device code, temperature, running time, etc. of the device.
 This page can set the Ptp DSCP priority.
 This page can restart the device (some models support this function. For some devices, a full power-off restart is required).
 ## 9. Device network routing settings
 The device routing configuration is all configured for network channels. The channels in the following figure are all network input and output channels.
 
-![9](./images/14-6-routing.jpg)
+![9](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-6-routing.jpg)
 
 1. The area is the sending device list. After expanding it, you can see the network sending channels of the device.
 2. The area is the receiving device list. After expanding it, you can see the network receiving channels of the device.
 3. The area is whether to route. The selected state means that the network sending channel signal of the device corresponding to area 1 is sent to the network receiving channel of the device corresponding to area 2.
 ## 10. <kbd>Device firmware upgrade</kbd>
 
-![10](./images/14-7-upgradefirmware.jpg)
+![10](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-7-upgradefirmware.jpg)
 
 Click<kbd>Menu - Firmware Upgrade</kbd>，and the firmware upgrade interface will pop up：
 
-![10.-2](./images/14-7-1upgradefirmware.png)
+![10.-2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-7-1upgradefirmware.png)
 
 + <kbd>Select network card</kbd>：For a computer with only one network card, the default selection is fine. For a computer with multiple network cards, select the network card corresponding to the device local area network. If they are not in the same local area network, the device cannot be found.
 
@@ -264,11 +264,11 @@ Click "Refresh Device", and all devices in the network will be displayed. If the
 Select the corresponding device. Be sure to check the type and distinguish the device to be upgraded through IP address, device name, and device ID. Click "Start Upgrade" and observe the "Status" column until the upgrade is completed.
 ## 11. Advanced functions
 ### 11.1 Custom DSP function
-![11.1-1](./images/14-8-DIY.jpg)
+![11.1-1](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-8-DIY.jpg)
 
 For device types that support the DSP function, enter the "Audio Processing" page. Press and hold Ctrl+8 at the same time, and enter the control code 6689. A "Customize" button will be displayed in the upper left corner. Click "Customize" to enter the custom DSP page.
 
-![11.1-2](./images/14-8-1-DIY.jpg)
+![11.1-2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-8-1-DIY.jpg)
 
 1. The area is for devices that support automatic mixing and echo cancellation. Functions can be added here.
 2. The area is for canceling customizations and saving custom functions.
@@ -279,7 +279,7 @@ For the delay function, all channels share a delay upper limit.
 5. In the area, for the corresponding DSP function, right-click to delete the function block.
 Right-click on the channel ID to copy the function block of the entire channel and paste it to other channels.
 ### 11.2 Modify the number of channels of the module
-![11.2](./images/14-9-status.jpg)
+![11.2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-9-status.jpg)
 
 For device types that support modifying channels, on the <kbd>Device Information - Others</kbd>page:
 +  press and hold __"Ctrl+8"__ at the same time and enter the control code __'6688'__. The channel and parameter configuration function page will be displayed.
@@ -291,7 +291,7 @@ If the device supports the DSP function, after modifying the number of input cha
 
 For devices with DSP functions, after modifying the number of channels, the DSP configuration file needs to be updated. Otherwise, the number of channels does not match the original configuration file, and the DSP function cannot be loaded normally.
 
-![11.3](./images/15-advanceconfig.png)
+![11.3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/15-advanceconfig.png)
 
 After modifying the number of channels in 11.2, restart the device to make the number of channels take effect. Then enter <kbd>Advanced Configuration</kbd>. As shown in the figure.
 
@@ -321,13 +321,6 @@ If the firewall is enabled, the following programs need to be set to allow netwo
 
 ## About this repository
 
-1.  This repository is for storing the __Digisyn Link3 GUI__ software package and the user manual. To download Digisyn Link3 GUI, please click __"Releases"__ on the right.
-2.  For more information about the Digisyn Link, please visit **[www.digisynthetic.com][digisynthetic]**.
+1.  This repository is for storing the __DIGISYN LINK3 GUI__ software package and the user manual. To download DIGISYN LINK3 GUI, please click __"Releases"__ on the right.
+2.  For more information about the DIGISYN LINK, please visit **[www.digisynthetic.com](https://www.digisynthetic.com/digisynlink/)**.
 
-[digisyn-link]: https://www.digisynthetic.com/digisynlink
-
-[dl-04]: https://www.digisynthetic.com/
-[dl-08]: https://www.digisynthetic.com/
-[digisynthetic]: https://www.digisynthetic.com/
-[gui]: https://github.com/Digisynthetic/Digisyn-Link
-[vsc]: https://github.com/Digisynthetic/Digisyn-Link-VSC
