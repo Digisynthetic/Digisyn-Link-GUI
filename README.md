@@ -213,7 +213,7 @@ Right-click on the DSP function block to pop up the function menu. You can copy 
    + Load Program: Select the corresponding program in the list to load the program parameters into the machine.
    + Delete Program: Select the corresponding program in the list to delete the program from the machine.
    + Export to PC: Select the corresponding program in the list to export the program to a computer file.
-Import from PC: Select the corresponding serial number in the list to import a computer file into the machine.
+   Import from PC: Select the corresponding serial number in the list to import a computer file into the machine.
 
 ### 8.4 <kbd>Channel volume</kbd>
 ![8.4](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-2-InputChannel.jpg)
@@ -297,9 +297,24 @@ After modifying the number of channels in 11.2, restart the device to make the n
 
 After confirming the number of input and output channels and the sampling rate, click <kbd>Set as Default</kbd> (after restarting due to modifying the channels, do not click the <kbd>Audio Processing</kbd> page, otherwise the advanced configuration modification will fail). This can reset the DSP configuration. After resetting the DSP configuration, the machine needs to be restarted for the changes to take effect, thus completing the modification.
 
+### 11.4 UDP Test tool
 
+![dad43fb87f238f39fce24b3a6162e5ee](https://gitee.com/shangguan-show/typora_picture/raw/master/dad43fb87f238f39fce24b3a6162e5ee.png)
+For devices that support UDP communication, on the Device Information - Other page, simultaneously hold down __'Ctrl+8'__ and enter the control code __'8008'__, and the UDP test tool page will be displayed.
+
+1. The area can be used to receive UDP data;
+
+    - If no data is received for a long time, check whether the firewall has blocked the UDP communication.
+    - setctl can enable the ssh remote login function of the device.
+    - Checking the memory can display the memory status of the device.
+
+2. The area can be used to send UDP data;
+
+    - The data to be sent can be entered in the text box. The sent data and the message replied by the receiving device will be displayed in the receiving text box on the left.
+    - The device to which the data is to be sent and the service to be enabled can be specified based on the IP and port number.
 
 ## 12. Troubleshooting
+
 ### 12.1 When the software starts, it prompts that the xxx.dll library is missing.
 The prompt for the lack of a dll library indicates that the computer system lacks Microsoft runtime libraries. Downloading <kbd>Microsoft VC++ runtime library collection</kbd>and installing it can solve the problem.
 ### 12.2 The software cannot detect the device
