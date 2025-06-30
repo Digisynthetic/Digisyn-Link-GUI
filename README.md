@@ -160,13 +160,11 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 
 <kbd>multicast stream</kbd>：This page can create, view, and delete multicast streams.
 
-<kbd>Multicast stream name</kbd>：The name displayed after creation. It should not exceed 32 characters.
-
-<kbd>destination address</kbd>：The address of the multicast stream. If there are no special requirements, automatic allocation can be selected. You can also customize the address.
-
-<kbd>Select channel</kbd>：The sending channels that the multicast stream needs to include. The selected channels can be sent out using the multicast stream.
-
-<kbd>delete</kbd>：You can delete the created multicast stream.
+- <kbd>Multicast stream name</kbd>：The name displayed after creation. It should not exceed 32 characters.
+- <kbd>destination address</kbd>：The address of the multicast stream. If there are no special requirements, automatic allocation can be selected. You can also customize the address.
+  - For GUI versions after 3.1.4.43 and firmware versions after 3.1.4.62, support for multicast streaming transmission and reception using non-5004 ports is enabled.
+- <kbd>Select channel</kbd>：The sending channels that the multicast stream needs to include. The selected channels can be sent out using the multicast stream.
+- <kbd>delete</kbd>：You can delete the created multicast stream.
 
 ![8.2-3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-6.jpg)
 
