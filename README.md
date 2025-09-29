@@ -198,6 +198,13 @@ Right-click on the DSP function block to pop up the function menu. You can copy 
 
 ![8.2-7](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14.jpg)
 
+1. Area 1 contains shortcut functions for setting parameters in bulk.
+2. Area 2 is for selecting the mix type. If "Gain Sharing" is selected, the gain sharing method will be used when multiple input channels are mixed to a single output channel.
+3. Area 3 is a one-touch gain reset button that resets the gain of all input channels for the corresponding output channel to zero.
+4. Area 4 is the level meter display, which makes it easy to check for signal presence on the input and output channels.
+5. Area 5 indicates if the corresponding input channel is mixed to the corresponding output channel. Blue means it is mixed; blank means it is not.
+6. Area 6 shows the gain of the corresponding input channel mixed to the corresponding output channel. You can click it to open an adjustment window.
+
 <kbd>Program management</kbd>：
 
 ![8.2-8](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-1.jpg)
