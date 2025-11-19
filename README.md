@@ -1,4 +1,3 @@
-
 # DIGISYN LINK3 GUI Instruction manual
 
 ![DIGISYN LINK logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/DIGISYNLINK.jpg)
@@ -65,7 +64,7 @@ On the left side of the software, click <kbd>Device Information</kbd> column，Y
 
 + <kbd>Device ID</kbd>：Used to uniquely identify a device. It will not change, will not be repeated, and cannot be modified.
 
-+ <kbd>Synchronization status</kbd>: Judge whether it has been synchronized. This page is refreshed every 5-10 seconds. After the device is connected to the network, it will automatically synchronize with the main device. The synchronization is completed in about one minute.
++ <kbd>Synchronization status</kbd>: This status indicates the synchronization state of this device with the network's PTP master clock. A "Locked" status signifies that the device's clock is precisely synchronized with the master clock and the signal is stable; an "Unlock" status means the device is initializing, searching for the master clock, or undergoing time calibration. After connecting to the network, the device automatically starts the synchronization process and typically achieves a lock within one minute. This status information refreshes automatically every 5-10 seconds.
 
 + <kbd>PPM</kbd>:Description parameter for clock alignment of master and slave devices. Generally, it is within ±30.
 
@@ -161,8 +160,10 @@ On any page of  <kbd>Device Routing</kbd>、<kbd>Device Information</kbd>、<kbd
 <kbd>multicast stream</kbd>：This page can create, view, and delete multicast streams.
 
 - <kbd>Multicast stream name</kbd>：The name displayed after creation. It should not exceed 32 characters.
+
 - <kbd>destination address</kbd>：The address of the multicast stream. If there are no special requirements, automatic allocation can be selected. You can also customize the address.
 - <kbd>Select channel</kbd>：The sending channels that the multicast stream needs to include. The selected channels can be sent out using the multicast stream.
+
 - <kbd>delete</kbd>：You can delete the created multicast stream.
 
 ![8.2-3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/13-6.jpg)
@@ -217,7 +218,7 @@ Right-click on the DSP function block to pop up the function menu. You can copy 
    + Load Program: Select the corresponding program in the list to load the program parameters into the machine.
    + Delete Program: Select the corresponding program in the list to delete the program from the machine.
    + Export to PC: Select the corresponding program in the list to export the program to a computer file.
-   Import from PC: Select the corresponding serial number in the list to import a computer file into the machine.
+Import from PC: Select the corresponding serial number in the list to import a computer file into the machine.
 
 ### 8.4 <kbd>Channel volume</kbd>
 ![8.4](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-2-InputChannel.jpg)
@@ -283,27 +284,69 @@ For the delay function, all channels share a delay upper limit.
 5. In the area, for the corresponding DSP function, right-click to delete the function block.
 Right-click on the channel ID to copy the function block of the entire channel and paste it to other channels.
 ### 11.2 Modify the number of channels of the module
+
+Note: For devices with DSP functionality, after modifying the channel count, you must also update the DSP configuration file according to section "11.3". Otherwise, the channel count will not match the original configuration file, and the DSP function will not load correctly.
+
+**1. Modify Module Channel Count Directly in the GUI**
+
+On the device you wish to modify, switch to the "Status" page. Press `ctrl + 8` and enter the control code `6688`. The parameter configuration page shown below will appear. Here, you can modify various parameter configurations, including the device channel count.
+
+![ChangeDeviceConfgi](https://docs.digisynthetic.com/uploads/GUI/ChangeDeviceConfig_en.jpg)
+
+1.  **Area 1** displays the current configuration parameters of the device. You can modify the value corresponding to each parameter directly (e.g., to change the current device's analog input channel count from 4 to 2, change `chNum_phyRx=4` to `chNum_phyRx=2`). After modification, click the "Modify Config" button in Area 3 on the right, and wait for the device to restart for the changes to take effect.
+2.  **Area 2** functions consistently with Area 1 (when modifying device parameters, using either area is sufficient). Each parameter provides several common configuration options (if the option you want is not provided here, you can modify the corresponding parameter line in Area 1). After modification, click "Modify Config" on the right and wait for the device to restart.
+
+Each parameter line in Area 1 corresponds to a parameter in Area 2, as follows:
+
+| Parameter in Area 1 | Corresponding Parameter in Area 2 |
+| :--- | :--- |
+| `chNum_phyRx` | Analog Input Channel Count |
+| `chNum_phyTx` | Analog Output Channel Count |
+| `chNum_dspFromNet` | Network Input Channel Count |
+| `chNum_dspToNet` | Network Output Channel Count |
+| `sampleRate` | Sample Rate |
+| `fmtType` | Audio Format |
+| `fmtIndex` | Audio Format Type |
+| `mclk` | Master Clock Frequency |
+| `inv_lrclk` | LR Clock Inversion |
+| `inv_bclk` | Bit Clock Inversion |
+
+**2. Modify Module Channel Count via UDP Control Commands**
+
+For some devices, after entering the `6688` control code, the situation shown below may occur. This indicates that the device does not support direct parameter modification via the interface. You need to set the device's configuration parameters by sending control commands via UDP.
+
 ![11.2](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/14-9-status.jpg)
 
-For device types that support modifying channels, on the <kbd>Device Information - Others</kbd>page:
-+  press and hold __"Ctrl+8"__ at the same time and enter the control code __'6688'__. The channel and parameter configuration function page will be displayed.
-+ The area is the function operation button. <kbd>Refresh Configuration</kbd> can refresh the current configuration data of the device. 
+The GUI includes a built-in UDP tool (refer to "11.4 UDP Test Tool"). On the "Status" tab of the device interface, press `ctrl + 8` and then enter `8008`. The following interface will appear.
 
-+ <kbd>Modify Configuration</kbd> can submit the modified content to the device. After submission, the device needs to be restarted for the changes to take effect.
-If the device supports the DSP function, after modifying the number of input channels and output channels, the default DSP configuration needs to be modified (refer to 11.3). If the device does not support the DSP function, there is no need to configure the DSP.
+![11 .4](https://docs.digisynthetic.com/uploads/11.4en.png)
+
+-   In the UDP send window on the right, send the following JSON string to the fixed port `9993` to set the specified configuration parameters for the target device.
+    *(Note: The values in `cfg` are examples only; fill them in as needed. You do not need to include all parameters. If you only want to modify the analog channel count, `cfg` only needs to include `chNum_phyRx=?\nchNum_phyTx=?\n`.)*
+
+```json
+{
+    "ops": "setCfg",
+    "cfg": "chNum_phyRx=8\nchNum_phyTx=8\nchNum_dspFromNet=0\nchNum_dspToNet=0\nsampleRate=48000\nfmtType=i2s\nfmtIndex=0\nmclk=24576000\ninv_lrclk=0\ninv_bclk=0"
+}
+```
+
+- After modifying the device's configuration parameters, manually restart the device and wait for the restart to complete.
 ### 11.3 Modifying the default DSP configuration
 
-For devices with DSP functions, after modifying the number of channels, the DSP configuration file needs to be updated. Otherwise, the number of channels does not match the original configuration file, and the DSP function cannot be loaded normally.
+For devices equipped with DSP functionality, after modifying the channel count, the DSP configuration file must be updated. Otherwise, the channel count will not match the original configuration file, and the DSP function will not load correctly.
+
+After modifying the channel count in section 11.2, reboot the device to apply the changes. Then, enter "Advanced Config".
+
+![EnterAdvancedConfig](https://docs.digisynthetic.com/uploads/GUI/EnterAdvancedConfig_en.jpg)
+
+As shown in the image, verify that the input/output channel counts and sample rate are correct. Click "SetDevDefault" (**Do not click the "DSP" page before completing this step, otherwise the advanced configuration modification will fail**), to reset the DSP configuration. After resetting the DSP configuration, the device must be rebooted for the changes to take effect, completing the modification process.
 
 ![11.3](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/15-advanceconfig.png)
 
-After modifying the number of channels in 11.2, restart the device to make the number of channels take effect. Then enter <kbd>Advanced Configuration</kbd>. As shown in the figure.
-
-After confirming the number of input and output channels and the sampling rate, click <kbd>Set as Default</kbd> (after restarting due to modifying the channels, do not click the <kbd>Audio Processing</kbd> page, otherwise the advanced configuration modification will fail). This can reset the DSP configuration. After resetting the DSP configuration, the machine needs to be restarted for the changes to take effect, thus completing the modification.
-
 ### 11.4 UDP Test tool
 
-![dad43fb87f238f39fce24b3a6162e5ee](https://gitee.com/shangguan-show/typora_picture/raw/master/dad43fb87f238f39fce24b3a6162e5ee.png)
+![11 .4](https://docs.digisynthetic.com/uploads/11.4en.png)
 For devices that support UDP communication, on the Device Information - Other page, simultaneously hold down __'Ctrl+8'__ and enter the control code __'8008'__, and the UDP test tool page will be displayed.
 
 1. The area can be used to receive UDP data;
@@ -318,7 +361,6 @@ For devices that support UDP communication, on the Device Information - Other pa
     - The device to which the data is to be sent and the service to be enabled can be specified based on the IP and port number.
 
 ## 12. Troubleshooting
-
 ### 12.1 When the software starts, it prompts that the xxx.dll library is missing.
 The prompt for the lack of a dll library indicates that the computer system lacks Microsoft runtime libraries. Downloading <kbd>Microsoft VC++ runtime library collection</kbd>and installing it can solve the problem.
 ### 12.2 The software cannot detect the device
