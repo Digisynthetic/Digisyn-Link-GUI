@@ -1,6 +1,6 @@
 # DIGISYN LINK3 GUI Instruction manual
 
-![DIGISYN LINK logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/DIGISYNLINK.jpg)
+![DIGISYN LINK logo](https://files.digisynthetic.cn/Image/Logo/AES67/AES67LINK-ICON.png)
 
 __The [DIGISYN LINK](https://www.digisynthetic.com/digisynlink/) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
 
