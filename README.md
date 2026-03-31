@@ -2,13 +2,13 @@
 
 ![DIGISYN LINK logo](https://files.digisynthetic.cn/Image/Logo/AES67/AES67LINK-ICON.png)
 
-__The [DIGISYN LINK](https://www.digisynthetic.com/digisynlink/) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
+__The [DIGISYN LINK](https://www.digisynthetic.com/products/oem-solutions) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
 
 ![digisyn link logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/AES67-module.jpg)
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
-Any audio device can equipped with __[DL-04 series network modules](https://www.digisynthetic.com/dl-modules/)__ or __[DL-08 series network modules](https://www.digisynthetic.com/dl-modules/)__.
+Any audio device can equipped with __[DL series network modules]([https://www.digisynthetic.com/dl-modules/](https://www.digisynthetic.com/products/oem-solutions))__.
 
  __DIGISYN LINK3 GUI Controller__  performs audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)](https://github.com/Digisynthetic/Digisyn-Link-VSC)__.
 
@@ -383,5 +383,5 @@ If the firewall is enabled, the following programs need to be set to allow netwo
 ## About this repository
 
 1.  This repository is for storing the __DIGISYN LINK3 GUI__ software package and the user manual. To download DIGISYN LINK3 GUI, please click __"Releases"__ on the right.
-2.  For more information about the DIGISYN LINK, please visit **[www.digisynthetic.com](https://www.digisynthetic.com/digisynlink/)**.
+2.  For more information about the OEM, please visit **[www.digisynthetic.com](https://www.digisynthetic.com/)**.
 
