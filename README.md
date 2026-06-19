@@ -1,18 +1,18 @@
-# DIGISYN LINK3 GUI Instruction manual
+# AES67LINK GUI Instruction manual
 
-![DIGISYN LINK logo](https://files.digisynthetic.cn/Image/Logo/AES67/AES67LINK-ICON.png)
+![AES67LINK logo](https://files.digisynthetic.cn/Image/Logo/AES67/AES67LINK-ICON.png)
 
-__The [DIGISYN LINK](https://www.digisynthetic.com/products/oem-solutions) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
+__The [AES67LINK](https://www.digisynthetic.com/products/oem-solutions) is a comprehensive platform that covers all DSP functions of the entire audio chain, from source input and DSP processing to speaker output.__ 
 
-![digisyn link logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/AES67-module.jpg)
+![AES67LINK logo](https://raw.githubusercontent.com/Digisynthetic/Digisyn-Link-GUI/main/images/AES67-module.jpg)
 
 The system is capable of routing and distributing all audio signals, performing DSP processing, and controlling and monitoring all devices, while maintaining lossless audio signal quality and ultra-low latency in accordance with the AES67 standard.
 
 Any audio device can equipped with __[DL series network modules]([https://www.digisynthetic.com/dl-modules/](https://www.digisynthetic.com/products/oem-solutions))__.
 
- __DIGISYN LINK3 GUI Controller__  performs audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)](https://github.com/Digisynthetic/Digisyn-Link-VSC)__.
+ __AES67LINK GUI Controller__  performs audio routing, DSP processing and network monitoring on DL module embedded devices and __[Digisyn VSC (AES67 Virtual Sound Card)](https://github.com/Digisynthetic/Digisyn-Link-VSC)__.
 
-The __DIGISYN LINK__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
+The __AES67LINK__ system is optimized for large, demanding audio systems and is an ideal choice for any location that requires a powerful audio processing system and full compliance with broadcasting standards.
 
 ## 1. Software installation
 +  Double-click the software installation package to install. You can choose the installation language. Simplified Chinese/English is supported. After selection, click <kbd>OK</kbd>.
@@ -68,7 +68,7 @@ On the left side of the software, click <kbd>Device Information</kbd> column，Y
 
 + <kbd>PPM</kbd>:Description parameter for clock alignment of master and slave devices. Generally, it is within ±30.
 
-+ <kbd>Master/Slave</kbd>:Whether it is a master device or a slave device. There is only one master device in a local area network. If there are other non-DIGISYN LINK devices using PTP clocks, they will also participate in the selection of master and slave devices together. That is, if there is a non-DIGISYN LINK device in the same local area network and its clock priority is higher, all DIGISYN LINK devices on the software may act as slaves.
++ <kbd>Master/Slave</kbd>:Whether it is a master device or a slave device. There is only one master device in a local area network. If there are other non-AES67LINK devices using PTP clocks, they will also participate in the selection of master and slave devices together. That is, if there is a non-AES67LINK device in the same local area network and its clock priority is higher, all AES67LINK devices on the software may act as slaves.
 
 + <kbd>Clock priority</kbd>: A parameter used to select master and slave devices. The range is 0-255. The smaller the value, the higher the priority. The default is 128. The system will automatically select the device with the highest priority (smallest value) in the network as the master device. You can manually specify a certain device to be the master (increase the priority). ___Virtual sound cards (VSC) and some special devices cannot be masters. The clock priority cannot be modified and is displayed as NA.___
 
@@ -379,9 +379,9 @@ If the firewall is enabled, the following programs need to be set to allow netwo
 + ___DigisynLink3Upgrade.exe___
 + ___gohttpserver.exe___
 
-
 ## About this repository
 
-1.  This repository is for storing the __DIGISYN LINK3 GUI__ software package and the user manual. To download DIGISYN LINK3 GUI, please click __"Releases"__ on the right.
-2.  For more information about the OEM, please visit **[www.digisynthetic.com](https://www.digisynthetic.com/)**.
+1.  This repository is for storing the SoundNet AES67LINK software package and the user manual. To download AES67LINK, please register at **[DIGISYNTHETIC DOCS](https://docs.digisynthetic.com/)**.
+2.  For more information, please visit **[www.digisynthetic.com](https://www.digisynthetic.com)**.
+
 
